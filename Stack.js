@@ -1,6 +1,8 @@
-// LIFO (last in first out)
+// the Stack is a Last-In-First-Out (LIFO) data structure
 
-var Array = []
+function init() {
+ var Array = [];
+}
 
 function add(element) {
  Array.push(element);
