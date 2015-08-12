@@ -1,6 +1,8 @@
-// FIFO (First In First Out) structure
+// the Queue is a First-In-First-Out (FIFO) data structure
 
-var Array = []
+function init() {
+ var Array = [];
+}
 
 function insert(element) {
  Array.push(element);
