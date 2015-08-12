@@ -3,8 +3,8 @@
 var Array = []
 
 function add(element) {
- Array.unshift(element);
- console.log(Array, 'Add first element into Array');
+ Array.push(element);
+ console.log(Array, 'Add last element into Array');
 }
 
 function delete() {
