@@ -1,4 +1,4 @@
-# @source: http://algosaur.us/
+# @source http://algosaur.us/
 
 global heap
 global currSize
