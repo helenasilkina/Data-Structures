@@ -9,3 +9,56 @@ def left(i): #returns left child of ith index
 
 def right(i): #returns right child of ith index
     return (2*i + 1)
+    
+def swap(a, b): #to swap a-th and b-th elements in heap
+    temp = heap[a]
+    heap[a] = heap[b]
+    heap[b] = temp
+
+def insert(elem):
+    global currSize
+    
+    index = len(heap)
+    heap.append(elem)
+    currSize += 1
+    par = parent(index)
+    flag = 0
+    while flag != 1:
+        if index == 1: #we have reached the root of the heap
+            flag = 1
+        elif heap[par] > elem: #if parent index is larger than index of elem, then elem has now been inserted into the right place
+            flag = 1
+        else: #swaps the parent and the index itself
+            swap(par, index)
+            index = par
+            par = parent(index)
+            
+    print heap
+    
+    def extractMax():
+    global currSize
+    if currSize != 0:
+        maxElem = heap[1]
+        heap[1] = heap[currSize] #replaces root element with the last element
+        heap.pop(currSize) #deletes last element present in heap
+        currSize -= 1 #reduces size of heap
+        maxHeapify(1)
+        return maxElem
+
+def maxHeapify(index):
+    global currSize
+    
+    lar = index
+    l = left(index)
+    r = right(index)
+
+    #print heap
+
+    #finds the larger child of the index; if larger child exists, swaps it with the index
+    if l <= currSize and heap[l] > heap[lar]:
+        lar = l
+    if r <= currSize and heap[r] > heap[lar]:
+        lar = r
+    if lar != index:
+        swap(index, lar)
+        maxHeapify(lar)
