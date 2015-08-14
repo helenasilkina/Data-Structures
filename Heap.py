@@ -1,3 +1,5 @@
+# @source: http://algosaur.us/
+
 global heap
 global currSize
 
@@ -62,3 +64,10 @@ def maxHeapify(index):
     if lar != index:
         swap(index, lar)
         maxHeapify(lar)
+        
+def buildHeap():
+    global currSize
+    for i in range(currSize/2, 0, -1): #third argument in range() shows increment factor, here -1
+        print heap
+        maxHeapify(i)
+    currSize = len(heap)-1    
