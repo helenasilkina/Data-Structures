@@ -15,3 +15,10 @@ function left(i) {
 function right(i) {
   return (2 * i + 1);
 }
+
+// to swap a-th and b-th elements in heap
+function swap(a, b) {
+  var temp = heap[a];
+  heap[a] = heap[b];
+  heap[b] = temp;
+}  
