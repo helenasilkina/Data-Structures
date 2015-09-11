@@ -57,3 +57,27 @@ function insert(elem) {
     }  
   }    
 }
+
+function maxHeapify(index) {
+    var maximum = index
+    var left = left(index);
+    var right = right(index);
+
+    if (left <= currentSize && heap[left] > heap[maximum]) {
+      maximum = left;
+    }    
+    if (right <= currentSize && heap[right] > heap[maximum]) {
+      maximum = right;
+    }    
+    if (maximum != index) {
+      swap(index, maximum);
+      maxHeapify(maximum);
+    }    
+}        
+        
+function buildHeap() {
+  maxHeapify(currentSize/2);
+  maxHeapify(0);
+  maxHeapify(-1);
+  currentSize = heap.length - 1;
+}    
