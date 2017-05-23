@@ -35,7 +35,7 @@ function insert(elem) {
   while (flag != 1) {
     if (index == 1) {
       flag = 1;
-    } else if (heap[par] > elem) {
+    } else if (heap[parent] > elem) {
       flag = 1;
     } else {
       swap(parent, index);
